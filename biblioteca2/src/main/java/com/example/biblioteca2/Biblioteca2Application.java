@@ -10,6 +10,6 @@ public class Biblioteca2Application {
 		SpringApplication.run(Biblioteca2Application.class, args);
 	}
 
-	system.out.println("hola");
+	
 
 }
