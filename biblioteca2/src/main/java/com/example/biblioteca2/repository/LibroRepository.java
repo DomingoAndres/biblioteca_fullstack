@@ -104,5 +104,10 @@ public class LibroRepository {
         listaLibros.removeIf((x) -> x.getId() == id);
     }
 
+    public LibroModel saveBook(LibroModel libro){
+        listaLibros.add(libro);
+        return libro;
+    }
+
 }
 

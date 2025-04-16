@@ -42,6 +42,14 @@ public class LibroService {
         System.out.println("Libro eliminado.");
     }
 
+    public LibroModel saveBook(LibroModel libro){
+        return libroRepository.guardarLibro(libro);
+    }
+
+    public int totalBooks(){
+        return libroRepository.librosTotales();
+    }
+
 
 
 
