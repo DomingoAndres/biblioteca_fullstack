@@ -9,6 +9,8 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 import java.util.ArrayList;
 
+
+@Repository
 public class LibroRepository {
 
     private List<LibroModel> listaLibros = new ArrayList<>();
@@ -104,9 +106,13 @@ public class LibroRepository {
         listaLibros.removeIf((x) -> x.getId() == id);
     }
 
-    public LibroModel saveBook(LibroModel libro){
+    public LibroModel guardarLibro(LibroModel libro){
         listaLibros.add(libro);
         return libro;
+    }
+
+    public int librosTotales(){
+        return listaLibros.size();
     }
 
 }

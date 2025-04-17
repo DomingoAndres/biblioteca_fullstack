@@ -6,9 +6,9 @@ import com.example.biblioteca2.model.LibroModel;
 
 import com.example.biblioteca2.repository.LibroRepository;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+//import java.util.HashMap;
+//import java.util.List;
+//import java.util.Map;
 
 @Service
 public class LibroService {
@@ -49,6 +49,8 @@ public class LibroService {
     public int totalBooks(){
         return libroRepository.librosTotales();
     }
+
+
 
 
 
