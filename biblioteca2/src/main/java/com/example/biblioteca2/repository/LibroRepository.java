@@ -43,7 +43,7 @@ public class LibroRepository {
     public LibroModel buscarLibroPorIsbn(String isbn){  
         
         for(LibroModel libro : listaLibros){
-            if(libro.getIsbn() == isbn) return libro;
+            if(libro.getIsbn().equals(isbn)) return libro;
         }
         return null;
     }
@@ -52,7 +52,7 @@ public class LibroRepository {
     public LibroModel buscarLibroPorAutor(String autor){
         
         for(LibroModel libro : listaLibros){
-            if(libro.getAutor() == autor) return libro;
+            if(libro.getAutor().equals(autor)) return libro;
         }
         return null;
     }
