@@ -6,9 +6,9 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.biblioteca2.service.LibroService;
@@ -27,10 +27,10 @@ public class LibroController {
         return libroService.getLibros();
     }
 
-    @PostMapping
-    public LibroModel agregarLibro(@RequestBody LibroModel libro){
-        return libroService.saveBook(libro);
-    }
+   // @PostMapping
+    //public LibroModel agregarLibro(@RequestBody LibroModel libro){
+        //return libroService.saveBook(libro);
+    //}
 
     @GetMapping("{id}")
     public LibroModel buscarLibroPorId(@PathVariable int id){
@@ -48,21 +48,23 @@ public class LibroController {
         return libroService.getLibroAutor(autor);
     }
 
-    @PostMapping("{id}")
+    @PutMapping("{id}")
     public LibroModel actualizarLibro(@PathVariable int id, @RequestBody LibroModel lib){
         return libroService.updateLibro(lib);
     }
 
     @DeleteMapping("{id}")
-    public void eliminarLibro(@RequestParam int id){
+    public String eliminarLibro(@PathVariable int id){
         libroService.deleteLibro(id);
+        return "Libro eliminado.";
     }
 
     @PostMapping
     public LibroModel guardarLibro(@RequestBody LibroModel libro){
-        libroService.saveBook(libro);
-        return libro;
+        return libroService.saveBook(libro);
     }
+
+
 
 
 }

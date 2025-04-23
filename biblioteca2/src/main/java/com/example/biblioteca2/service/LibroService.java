@@ -37,9 +37,9 @@ public class LibroService {
     }
 
 
-    public void deleteLibro(int id){
+    public String deleteLibro(int id){
         libroRepository.eliminar(id);
-        System.out.println("Libro eliminado.");
+        return "Libro eliminado";
     }
 
     public LibroModel saveBook(LibroModel libro){
